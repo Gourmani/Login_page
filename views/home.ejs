@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .home-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .home-container h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-page {
+            background-color: #f4f4f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .about-page h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .about-page p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .about-page ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .about-page li {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .about-page code {
+            background-color: #e0e0e0;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 1rem;
+            color: #d9534f;
+        }
+
+        .animate__animated {
+            animation-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-container">
+        <h1 class="animate__animated animate__bounceIn">Welcome to Home Page</h1>
+        <section class="about-page animate__animated animate__fadeInUp">
+            <h2>About This Page</h2>
+            <p>This web application is designed to manage user registration and authentication with a focus on security and data integrity. Here's how it works:</p>
+            <ul>
+                <li><strong>Data Storage:</strong> When a user signs up, their username and password are stored in a MongoDB database. The username is stored as plain text, while the password undergoes a crucial security process before storage.</li>
+                <li><strong>Password Hashing:</strong> To protect user passwords, we use the <code>bcrypt</code> hashing algorithm. Bcrypt adds a unique salt to each password and then hashes it, ensuring that even identical passwords will have different hashes. This makes it nearly impossible for attackers to reverse-engineer the original password from the stored hash.</li>
+                <li><strong>User Authentication:</strong> During login, the user-provided password is hashed using the same salt and compared to the hashed password stored in the database. If the hashes match, the user is successfully authenticated and granted access to the application.</li>
+                <li><strong>Security Best Practices:</strong> Using bcrypt for hashing and salting passwords is a widely recommended practice for enhancing security. It helps protect against various types of attacks, including brute force and rainbow table attacks.</li>
+                <li><strong>Frontend and Backend:</strong> The frontend is built using EJS templating and styled with CSS, while the backend is powered by Node.js and Express.js, providing a seamless and secure user experience.</li>
+            </ul>
+            <p>Explore the features, and rest assured that your data is securely handled.</p>
+        </section>
+    </div>
+</body>
+</html>
